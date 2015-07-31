@@ -35,7 +35,7 @@ namespace HelloWorldAPI.Controllers
         /// <returns>A string containing today's value</returns>
         public string Get()
         {
-            return "value";
+            return this.dataService.GetTodaysData();
         }
 
         /// <summary>
