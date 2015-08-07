@@ -21,7 +21,7 @@ namespace ConsoleApp.Services
         /// <summary>
         /// The application settings key for the Hello World API URL
         /// </summary>
-        private const string HelloWorldAPIURLKey = "HelloWorldAPIURL";
+        private const string HelloWorldApiUrlKey = "HelloWorldAPIURL";
 
         /// <summary>
         /// The Rest client
@@ -79,7 +79,7 @@ namespace ConsoleApp.Services
             TodaysData todaysData = null;
 
             // Set the URL for the request
-            this.restClient.BaseUrl = this.uriService.GetUri(this.appSettings.Get(HelloWorldAPIURLKey));
+            this.restClient.BaseUrl = this.uriService.GetUri(this.appSettings.Get(HelloWorldApiUrlKey));
 
             // Setup the request
             this.restRequest.Resource = "todaysdata";

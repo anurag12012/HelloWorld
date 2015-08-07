@@ -59,7 +59,7 @@ namespace HelloWorldInfrastructure.Services
             // Check for an exception
             if (exception != null)
             {
-                logMessage += "[Exception:" + exception.ToString() + " ]";
+                logMessage += "[Exception:" + exception + " ]";
             }
 
             this.console.WriteLine(logMessage);
