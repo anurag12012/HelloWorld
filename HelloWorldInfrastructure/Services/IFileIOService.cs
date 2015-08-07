@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IDataService.cs">
+// <copyright file="IFileIOService.cs">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -8,14 +8,15 @@
 namespace HelloWorldInfrastructure.Services
 {
     /// <summary>
-    /// Data Service for manipulating data
+    /// Service for file IO
     /// </summary>
-    public interface IDataService
+    public interface IFileIOService
     {
         /// <summary>
-        /// Gets today's data
+        /// Reads the specified file
         /// </summary>
-        /// <returns>A string containing today's data</returns>
-        string GetTodaysData();
+        /// <param name="filePath">File path</param>
+        /// <returns>The contents of the file</returns>
+        string ReadFile(string filePath);
     }
 }

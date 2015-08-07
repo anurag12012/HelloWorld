@@ -1,21 +1,23 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IDataService.cs">
+// <copyright file="IDateTime.cs">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace HelloWorldInfrastructure.Services
+namespace HelloWorldInfrastructure.FrameworkWrappers
 {
+    using System;
+
     /// <summary>
-    /// Data Service for manipulating data
+    /// Wraps the DateTime structure
     /// </summary>
-    public interface IDataService
+    public interface IDateTime
     {
         /// <summary>
-        /// Gets today's data
+        /// Gets the DateTime as of Now
         /// </summary>
-        /// <returns>A string containing today's data</returns>
-        string GetTodaysData();
+        /// <returns>A DateTime object containing the date and time of Now</returns>
+        DateTime Now();
     }
 }

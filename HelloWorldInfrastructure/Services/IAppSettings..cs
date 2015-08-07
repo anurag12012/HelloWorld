@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IDataService.cs">
+// <copyright file="IAppSettings.cs">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -8,14 +8,15 @@
 namespace HelloWorldInfrastructure.Services
 {
     /// <summary>
-    /// Data Service for manipulating data
+    /// Service for application settings
     /// </summary>
-    public interface IDataService
+    public interface IAppSettings
     {
         /// <summary>
-        /// Gets today's data
+        /// Gets the string value of a configuration value
         /// </summary>
-        /// <returns>A string containing today's data</returns>
-        string GetTodaysData();
+        /// <param name="name">The name</param>
+        /// <returns>The application settings value</returns>
+        string Get(string name);
     }
 }

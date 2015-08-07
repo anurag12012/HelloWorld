@@ -31,7 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,9 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameworkWrappers\SystemDateTime.cs" />
+    <Compile Include="FrameworkWrappers\IDateTime.cs" />
+    <Compile Include="Services\ConfigAppSettings.cs" />
+    <Compile Include="Services\ServerHostingEnvironmentService.cs" />
+    <Compile Include="Services\IHostingEnvironmentService.cs" />
     <Compile Include="Services\IDataService.cs" />
-    <Compile Include="Services\TextFileDataService.cs" />
+    <Compile Include="Services\IAppSettings..cs" />
+    <Compile Include="Services\IFileIOService.cs" />
+    <Compile Include="Services\TodayDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TextFileIOService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\TodaysData.txt">

@@ -8,6 +8,8 @@
 namespace HelloWorldAPI
 {
     using System.Web.Http;
+
+    using HelloWorldInfrastructure.FrameworkWrappers;
     using HelloWorldInfrastructure.Services;
     using LightInject;
 
@@ -39,8 +41,20 @@ namespace HelloWorldAPI
         /// <param name="serviceRegistry">The Service Registry</param>
         private static void RegisterServices(IServiceRegistry serviceRegistry)
         {
+            // Register default Application Settings Service
+            serviceRegistry.Register<IAppSettings, ConfigAppSettings>();
+
+            // Register default Hosting Environment Service
+            serviceRegistry.Register<IHostingEnvironmentService, ServerHostingEnvironmentService>();
+
+            // Register default File IO Service
+            serviceRegistry.Register<IFileIOService, TextFileIOService>();
+
             // Register default Data Service
-            serviceRegistry.Register<IDataService, TextFileDataService>();
+            serviceRegistry.Register<IDataService, TodayDataService>();
+
+            // Register default DateTime wrapper
+            serviceRegistry.Register<IDateTime, SystemDateTime>();
         }
     }
 }

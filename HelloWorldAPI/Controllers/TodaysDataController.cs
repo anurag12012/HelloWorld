@@ -18,7 +18,7 @@ namespace HelloWorldAPI.Controllers
         /// <summary>
         /// The data service
         /// </summary>
-        private IDataService dataService;
+        private readonly IDataService dataService;
 
         /// <summary>
         /// Creates a new instance of the controller
@@ -36,14 +36,6 @@ namespace HelloWorldAPI.Controllers
         public string Get()
         {
             return this.dataService.GetTodaysData();
-        }
-
-        /// <summary>
-        /// Updates today's value with the specified value
-        /// </summary>
-        /// <param name="value">The upated value</param>
-        public void Put(string value)
-        {
         }
     }
 }

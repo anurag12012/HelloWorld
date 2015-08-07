@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IDataService.cs">
+// <copyright file="IHostingEnvironmentService.cs">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -8,14 +8,15 @@
 namespace HelloWorldInfrastructure.Services
 {
     /// <summary>
-    /// Data Service for manipulating data
+    /// Service for Hosting Environment
     /// </summary>
-    public interface IDataService
+    public interface IHostingEnvironmentService
     {
         /// <summary>
-        /// Gets today's data
+        /// Map's the specified path to the hosting environment's path
         /// </summary>
-        /// <returns>A string containing today's data</returns>
-        string GetTodaysData();
+        /// <param name="path">The path</param>
+        /// <returns>The hosting environment's path</returns>
+        string MapPath(string path);
     }
 }
