@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="TodayDataService.cs">
+// <copyright file="HelloWorldDataService.cs" company="Ryan Woodcox">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -8,12 +8,17 @@
 namespace HelloWorldInfrastructure.Services
 {
     using HelloWorldInfrastructure.FrameworkWrappers;
+    using HelloWorldInfrastructure.Mappers;
+    using HelloWorldInfrastructure.Models;
 
     /// <summary>
-    /// Text file data service for maniuplating data in a text file
+    /// Data service for manipulating Hello World data
     /// </summary>
-    public class TodayDataService : IDataService
+    public class HelloWorldDataService : IDataService
     {
+        /// <summary>
+        /// The application settings key for the today data file
+        /// </summary>
         private const string TodayDataFileKey = "TodaysDataFile";
 
         /// <summary>
@@ -32,25 +37,42 @@ namespace HelloWorldInfrastructure.Services
         private readonly IFileIOService fileIOService;
 
         /// <summary>
-        /// Creates a new instance of TextFileDataService
+        /// The Hello World Mapper
+        /// </summary>
+        private readonly IHelloWorldMapper helloWorldMapper;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HelloWorldDataService" /> class.
         /// </summary>
         /// <param name="appSettings">The injected application settings service</param>
         /// <param name="dateTimeWrapper">The injected DateTime wrapper</param>
         /// <param name="fileIOService">The injected File IO Service</param>
-        public TodayDataService(IAppSettings appSettings, IDateTime dateTimeWrapper, IFileIOService fileIOService)
+        /// <param name="helloWorldMapper">The injected Hello World Mapper</param>
+        public HelloWorldDataService(
+            IAppSettings appSettings, 
+            IDateTime dateTimeWrapper, 
+            IFileIOService fileIOService,
+            IHelloWorldMapper helloWorldMapper)
         {
             this.appSettings = appSettings;
             this.dateTimeWrapper = dateTimeWrapper;
             this.fileIOService = fileIOService;
+            this.helloWorldMapper = helloWorldMapper;
         }
 
         /// <summary>
         /// Gets today's data
         /// </summary>
-        /// <returns>A string containing today's data</returns>
-        public string GetTodaysData()
+        /// <returns>A TodaysData model containing today's data</returns>
+        public TodaysData GetTodaysData()
         {
-            return this.fileIOService.ReadFile(this.appSettings.Get(TodayDataFileKey)) + " as of " + this.dateTimeWrapper.Now().ToString("F");
+            // Get the data
+            var rawData = this.fileIOService.ReadFile(this.appSettings.Get(TodayDataFileKey)) + " as of " + this.dateTimeWrapper.Now().ToString("F");
+
+            // Map to the return type
+            var todaysData = this.helloWorldMapper.StringToTodaysData(rawData);
+
+            return todaysData;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IDateTime.cs" company="Ryan Woodcox">
+// <copyright file="SystemUri.cs" company="Ryan Woodcox">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -10,14 +10,18 @@ namespace HelloWorldInfrastructure.FrameworkWrappers
     using System;
 
     /// <summary>
-    /// Wraps the DateTime structure
+    /// Wraps the System.URI class
     /// </summary>
-    public interface IDateTime
+    public class SystemUri : IUri
     {
         /// <summary>
-        /// Gets the DateTime as of Now
+        /// Creates a Uri based on the specified Uri string
         /// </summary>
+        /// <param name="uriString">The Uri string</param>
         /// <returns>A DateTime object containing the date and time of Now</returns>
-        DateTime Now();
+        public Uri GetUri(string uriString)
+        {
+            return new Uri(uriString);
+        }
     }
 }

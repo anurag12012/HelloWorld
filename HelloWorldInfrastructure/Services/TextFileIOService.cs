@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="TextFileIOService.cs">
+// <copyright file="TextFileIOService.cs" company="Ryan Woodcox">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -20,7 +20,7 @@ namespace HelloWorldInfrastructure.Services
         private readonly IHostingEnvironmentService hostingEnvironmentService;
 
         /// <summary>
-        /// Creates a new instance of TextFileIOService
+        /// Initializes a new instance of the <see cref="TextFileIOService" /> class.
         /// </summary>
         /// <param name="hostingEnvironmentService">The injected hosting environment service</param>
         public TextFileIOService(IHostingEnvironmentService hostingEnvironmentService)

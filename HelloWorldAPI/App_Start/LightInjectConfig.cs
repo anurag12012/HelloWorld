@@ -10,6 +10,7 @@ namespace HelloWorldAPI
     using System.Web.Http;
 
     using HelloWorldInfrastructure.FrameworkWrappers;
+    using HelloWorldInfrastructure.Mappers;
     using HelloWorldInfrastructure.Services;
     using LightInject;
 
@@ -51,10 +52,13 @@ namespace HelloWorldAPI
             serviceRegistry.Register<IFileIOService, TextFileIOService>();
 
             // Register default Data Service
-            serviceRegistry.Register<IDataService, TodayDataService>();
+            serviceRegistry.Register<IDataService, HelloWorldDataService>();
 
             // Register default DateTime wrapper
             serviceRegistry.Register<IDateTime, SystemDateTime>();
+
+            // Register default Hello World mapper
+            serviceRegistry.Register<IHelloWorldMapper, HelloWorldMapper>();
         }
     }
 }

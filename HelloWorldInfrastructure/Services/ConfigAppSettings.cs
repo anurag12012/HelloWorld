@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ConfigAppSettings.cs">
+// <copyright file="ConfigAppSettings.cs" company="Ryan Woodcox">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>

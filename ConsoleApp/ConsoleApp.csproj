@@ -47,14 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainDriver.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Application\IHelloWorldConsoleApp.cs" />
+    <Compile Include="Application\HelloWorldConsoleApp.cs" />
+    <Compile Include="Application\MainDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Services\IHelloWorldWebService.cs" />
+    <Compile Include="Services\HelloWorldWebService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloWorldInfrastructure\HelloWorldInfrastructure.csproj">
+      <Project>{D8210231-F4EB-458E-B201-3DE794E8F2F0}</Project>
+      <Name>HelloWorldInfrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

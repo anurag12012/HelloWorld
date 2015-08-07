@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="TodaysDataController.cs">
+// <copyright file="TodaysDataController.cs" company="Ryan Woodcox">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
@@ -8,6 +8,7 @@
 namespace HelloWorldAPI.Controllers
 {
     using System.Web.Http;
+    using HelloWorldInfrastructure.Models;
     using HelloWorldInfrastructure.Services;
 
     /// <summary>
@@ -21,7 +22,7 @@ namespace HelloWorldAPI.Controllers
         private readonly IDataService dataService;
 
         /// <summary>
-        /// Creates a new instance of the controller
+        /// Initializes a new instance of the <see cref="TodaysDataController" /> class.
         /// </summary>
         /// <param name="dataService">The injected data service</param>
         public TodaysDataController(IDataService dataService)
@@ -32,8 +33,8 @@ namespace HelloWorldAPI.Controllers
         /// <summary>
         /// Gets today's value
         /// </summary>
-        /// <returns>A string containing today's value</returns>
-        public string Get()
+        /// <returns>A TodaysData model containing today's value</returns>
+        public TodaysData Get()
         {
             return this.dataService.GetTodaysData();
         }

@@ -1,23 +1,20 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MainDriver.cs">
+// <copyright file="TodaysData.cs" company="Ryan Woodcox">
 //  Copyright (c) 2015 All Rights Reserved
 //  <author>Ryan Woodcox</author>
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ConsoleApp
+namespace HelloWorldInfrastructure.Models
 {
     /// <summary>
-    /// Main class that drives the application
+    /// Model that represents a Today's Data response
     /// </summary>
-    class MainDriver
+    public class TodaysData
     {
         /// <summary>
-        /// Starts the console application with the specified command line arguments
+        /// Gets or sets the data
         /// </summary>
-        /// <param name="args">Command line arguments</param>
-        static void Main(string[] args)
-        {
-        }
+        public string Data { get; set; }
     }
 }
