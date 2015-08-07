@@ -14,42 +14,42 @@ namespace ConsoleApp.Services
     using RestSharp;
 
     /// <summary>
-    /// Service class for communicating with the Hello World Web API
+    ///     Service class for communicating with the Hello World Web API
     /// </summary>
     public class HelloWorldWebService : IHelloWorldWebService
     {
         /// <summary>
-        /// The application settings key for the Hello World API URL
+        ///     The application settings key for the Hello World API URL
         /// </summary>
         private const string HelloWorldApiUrlKey = "HelloWorldAPIURL";
 
         /// <summary>
-        /// The Rest client
-        /// </summary>
-        private readonly IRestClient restClient;
-
-        /// <summary>
-        /// The Rest request
-        /// </summary>
-        private readonly IRestRequest restRequest;
-
-        /// <summary>
-        /// The application settings service
+        ///     The application settings service
         /// </summary>
         private readonly IAppSettings appSettings;
 
         /// <summary>
-        /// The wrapped Uri service
-        /// </summary>
-        private readonly IUri uriService;
-
-        /// <summary>
-        /// The logger
+        ///     The logger
         /// </summary>
         private readonly ILogger logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HelloWorldWebService" /> class.
+        ///     The Rest client
+        /// </summary>
+        private readonly IRestClient restClient;
+
+        /// <summary>
+        ///     The Rest request
+        /// </summary>
+        private readonly IRestRequest restRequest;
+
+        /// <summary>
+        ///     The wrapped Uri service
+        /// </summary>
+        private readonly IUri uriService;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="HelloWorldWebService" /> class.
         /// </summary>
         /// <param name="restClient">The rest client</param>
         /// <param name="restRequest">The rest request</param>
@@ -57,9 +57,9 @@ namespace ConsoleApp.Services
         /// <param name="uriService">The uri service</param>
         /// <param name="logger">The logger</param>
         public HelloWorldWebService(
-            IRestClient restClient, 
-            IRestRequest restRequest, 
-            IAppSettings appSettings, 
+            IRestClient restClient,
+            IRestRequest restRequest,
+            IAppSettings appSettings,
             IUri uriService,
             ILogger logger)
         {
@@ -71,7 +71,7 @@ namespace ConsoleApp.Services
         }
 
         /// <summary>
-        /// Gets today's data from the web API
+        ///     Gets today's data from the web API
         /// </summary>
         /// <returns>A TodaysData model containing today's data</returns>
         public TodaysData GetTodaysData()
@@ -101,10 +101,10 @@ namespace ConsoleApp.Services
                 }
                 else
                 {
-                    var errorMessage = "Error in RestSharp, most likely in endpoint URL."
-                   + " Error message: " + todaysDataResponse.ErrorMessage
-                   + " HTTP Status Code: " + todaysDataResponse.StatusCode.ToString() 
-                   + " HTTP Status Description: " + todaysDataResponse.StatusDescription;
+                    var errorMessage = "Error in RestSharp, most likely in endpoint URL." + " Error message: "
+                                       + todaysDataResponse.ErrorMessage + " HTTP Status Code: "
+                                       + todaysDataResponse.StatusCode + " HTTP Status Description: "
+                                       + todaysDataResponse.StatusDescription;
 
                     // Check for existing exception
                     if (todaysDataResponse.ErrorMessage != null && todaysDataResponse.ErrorException != null)
@@ -122,7 +122,8 @@ namespace ConsoleApp.Services
             else
             {
                 // Log the exception
-                const string ErrorMessage = "Did not get any response from the Hello World Web Api for the Method: GET /todaysdata";
+                const string ErrorMessage =
+                    "Did not get any response from the Hello World Web Api for the Method: GET /todaysdata";
 
                 this.logger.Error(ErrorMessage, new Exception(ErrorMessage));
             }

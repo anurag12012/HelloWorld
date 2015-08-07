@@ -12,17 +12,17 @@ namespace HelloWorldAPI.Controllers
     using HelloWorldInfrastructure.Services;
 
     /// <summary>
-    /// API controller for getting and setting today's value.
+    ///     API controller for getting and setting today's value.
     /// </summary>
     public class TodaysDataController : ApiController
     {
         /// <summary>
-        /// The data service
+        ///     The data service
         /// </summary>
         private readonly IDataService dataService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TodaysDataController" /> class.
+        ///     Initializes a new instance of the <see cref="TodaysDataController" /> class.
         /// </summary>
         /// <param name="dataService">The injected data service</param>
         public TodaysDataController(IDataService dataService)
@@ -31,7 +31,7 @@ namespace HelloWorldAPI.Controllers
         }
 
         /// <summary>
-        /// Gets today's value
+        ///     Gets today's value
         /// </summary>
         /// <returns>A TodaysData model containing today's value</returns>
         public TodaysData Get()

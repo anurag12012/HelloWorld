@@ -8,20 +8,21 @@
 namespace HelloWorldInfrastructure.Services
 {
     using System;
+
     using HelloWorldInfrastructure.FrameworkWrappers;
 
     /// <summary>
-    /// Service for logging to the Console window
+    ///     Service for logging to the Console window
     /// </summary>
     public class ConsoleLogger : ILogger
     {
         /// <summary>
-        /// The Console abstraction for writing to the console.
+        ///     The Console abstraction for writing to the console.
         /// </summary>
         private readonly IConsole console;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConsoleLogger" /> class.
+        ///     Initializes a new instance of the <see cref="ConsoleLogger" /> class.
         /// </summary>
         /// <param name="console">The injected console</param>
         public ConsoleLogger(IConsole console)
@@ -30,7 +31,7 @@ namespace HelloWorldInfrastructure.Services
         }
 
         /// <summary>
-        /// Write an INFO message to the log
+        ///     Write an INFO message to the log
         /// </summary>
         /// <param name="message">Log message</param>
         public void Info(string message)
@@ -39,7 +40,7 @@ namespace HelloWorldInfrastructure.Services
         }
 
         /// <summary>
-        /// Write an DEBUG message to the log
+        ///     Write an DEBUG message to the log
         /// </summary>
         /// <param name="message">Log message</param>
         public void Debug(string message)
@@ -48,7 +49,7 @@ namespace HelloWorldInfrastructure.Services
         }
 
         /// <summary>
-        /// Write an ERROR message to the log
+        ///     Write an ERROR message to the log
         /// </summary>
         /// <param name="message">Log message</param>
         /// <param name="exception">Exception instance</param>

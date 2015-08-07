@@ -14,12 +14,12 @@ namespace ConsoleApp.Application
     using RestSharp;
 
     /// <summary>
-    /// Main class that drives the application
+    ///     Main class that drives the application
     /// </summary>
     public class MainDriver
     {
         /// <summary>
-        /// Starts the console application with the specified command line arguments
+        ///     Starts the console application with the specified command line arguments
         /// </summary>
         /// <param name="args">Command line arguments</param>
         public static void Main(string[] args)

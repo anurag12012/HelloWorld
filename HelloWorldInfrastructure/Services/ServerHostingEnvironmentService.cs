@@ -7,19 +7,21 @@
 
 namespace HelloWorldInfrastructure.Services
 {
+    using System.Web.Hosting;
+
     /// <summary>
-    /// Service for Server Hosting Environment
+    ///     Service for Server Hosting Environment
     /// </summary>
     public class ServerHostingEnvironmentService : IHostingEnvironmentService
     {
         /// <summary>
-        /// Map's the specified path to the hosting environment's path
+        ///     Map's the specified path to the hosting environment's path
         /// </summary>
         /// <param name="path">The path</param>
         /// <returns>The hosting environment's path</returns>
         public string MapPath(string path)
         {
-            return System.Web.Hosting.HostingEnvironment.MapPath("~/" + path);
+            return HostingEnvironment.MapPath("~/" + path);
         }
     }
 }

@@ -11,22 +11,22 @@ namespace ConsoleApp.Application
     using HelloWorldInfrastructure.Services;
 
     /// <summary>
-    /// Hello World Console Application
+    ///     Hello World Console Application
     /// </summary>
     public class HelloWorldConsoleApp : IHelloWorldConsoleApp
     {
         /// <summary>
-        /// The Hello World Web Service
+        ///     The Hello World Web Service
         /// </summary>
         private readonly IHelloWorldWebService helloWorldWebService;
 
         /// <summary>
-        /// The logger
+        ///     The logger
         /// </summary>
         private readonly ILogger logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HelloWorldConsoleApp" /> class.
+        ///     Initializes a new instance of the <see cref="HelloWorldConsoleApp" /> class.
         /// </summary>
         /// <param name="helloWorldWebService">The injected hello world web service</param>
         /// <param name="logger">The logger</param>
@@ -37,7 +37,7 @@ namespace ConsoleApp.Application
         }
 
         /// <summary>
-        /// Runs the main Hello World Console Application
+        ///     Runs the main Hello World Console Application
         /// </summary>
         /// <param name="arguments">The command line arguments.</param>
         public void Run(string[] arguments)

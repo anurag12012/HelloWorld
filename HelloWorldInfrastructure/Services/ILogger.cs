@@ -10,24 +10,24 @@ namespace HelloWorldInfrastructure.Services
     using System;
 
     /// <summary>
-    /// Service for logging
+    ///     Service for logging
     /// </summary>
     public interface ILogger
     {
         /// <summary>
-        /// Write an INFO message to the log
+        ///     Write an INFO message to the log
         /// </summary>
         /// <param name="message">Log message</param>
         void Info(string message);
 
         /// <summary>
-        /// Write an DEBUG message to the log
+        ///     Write an DEBUG message to the log
         /// </summary>
         /// <param name="message">Log message</param>
         void Debug(string message);
 
         /// <summary>
-        /// Write an ERROR message to the log
+        ///     Write an ERROR message to the log
         /// </summary>
         /// <param name="message">Log message</param>
         /// <param name="exception">Exception instance</param>
