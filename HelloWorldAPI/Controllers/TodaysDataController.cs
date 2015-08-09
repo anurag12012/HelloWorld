@@ -7,13 +7,17 @@
 
 namespace HelloWorldAPI.Controllers
 {
+    using System.IO;
+    using System.Net;
     using System.Web.Http;
+    using HelloWorldInfrastructure.Attributes;
     using HelloWorldInfrastructure.Models;
     using HelloWorldInfrastructure.Services;
 
     /// <summary>
     ///     API controller for getting and setting today's value.
     /// </summary>
+    [WebApiExceptionFilter]
     public class TodaysDataController : ApiController
     {
         /// <summary>
@@ -34,6 +38,7 @@ namespace HelloWorldAPI.Controllers
         ///     Gets today's value
         /// </summary>
         /// <returns>A TodaysData model containing today's value</returns>
+        [WebApiExceptionFilter(Type = typeof(IOException), Status = HttpStatusCode.ServiceUnavailable, Severity = SeverityCode.Error)]
         public TodaysData Get()
         {
             return this.dataService.GetTodaysData();

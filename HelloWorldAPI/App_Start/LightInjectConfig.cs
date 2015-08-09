@@ -45,6 +45,10 @@ namespace HelloWorldAPI
             // Register default Application Settings Service
             serviceRegistry.Register<IAppSettings, ConfigAppSettings>();
 
+            // Register default Logger Service
+            ////serviceRegistry.Register<ILogger, JsonL4NLogger>();
+            serviceRegistry.RegisterInstance(typeof(ILogger), new JsonL4NLogger());
+
             // Register default Hosting Environment Service
             serviceRegistry.Register<IHostingEnvironmentService, ServerHostingEnvironmentService>();
 

@@ -110,12 +110,12 @@ namespace ConsoleApp.Services
                     if (todaysDataResponse.ErrorMessage != null && todaysDataResponse.ErrorException != null)
                     {
                         // Log an informative exception including the RestSharp exception
-                        this.logger.Error(errorMessage, todaysDataResponse.ErrorException);
+                        this.logger.Error(errorMessage, null, todaysDataResponse.ErrorException);
                     }
                     else
                     {
                         // Log an informative exception including the RestSharp content
-                        this.logger.Error(errorMessage, new Exception(todaysDataResponse.Content));
+                        this.logger.Error(errorMessage, null, new Exception(todaysDataResponse.Content));
                     }
                 }
             }
@@ -125,7 +125,7 @@ namespace ConsoleApp.Services
                 const string ErrorMessage =
                     "Did not get any response from the Hello World Web Api for the Method: GET /todaysdata";
 
-                this.logger.Error(ErrorMessage, new Exception(ErrorMessage));
+                this.logger.Error(ErrorMessage, null, new Exception(ErrorMessage));
             }
 
             return todaysData;

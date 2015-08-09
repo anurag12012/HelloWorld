@@ -7,7 +7,9 @@
 
 namespace HelloWorldInfrastructure.Services
 {
+    using System;
     using System.IO;
+    using HelloWorldInfrastructure.Resources;
 
     /// <summary>
     ///     Service for text file IO
@@ -40,10 +42,18 @@ namespace HelloWorldInfrastructure.Services
             // Map path to server path
             var serverPath = this.hostingEnvironmentService.MapPath(filePath);
 
-            // read the contents of the file
-            using (var reader = new StreamReader(serverPath))
+            // Read the contents of the file
+            try
             {
-                fileContents = reader.ReadToEnd();
+                using (var reader = new StreamReader(serverPath))
+                {
+                    fileContents = reader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw an IO exception
+                throw new IOException(ErrorCodes.TodayDataFileError, new IOException("There was a problem reading the data file!", ex));
             }
 
             return fileContents;

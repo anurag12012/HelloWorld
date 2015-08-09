@@ -46,7 +46,7 @@ namespace ConsoleApp.Application
             var todaysData = this.helloWorldWebService.GetTodaysData();
 
             // Write Today's data to the screen
-            this.logger.Info(todaysData != null ? todaysData.Data : "No data was found!");
+            this.logger.Info(todaysData != null ? todaysData.Data : "No data was found!", null);
         }
     }
 }

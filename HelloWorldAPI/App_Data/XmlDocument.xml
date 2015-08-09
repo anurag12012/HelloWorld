@@ -511,23 +511,23 @@
         </member>
         <member name="T:HelloWorldAPI.Controllers.TodaysDataController">
             <summary>
-            API controller for getting and setting today's value.
+                API controller for getting and setting today's value.
             </summary>
         </member>
         <member name="F:HelloWorldAPI.Controllers.TodaysDataController.dataService">
             <summary>
-            The data service
+                The data service
             </summary>
         </member>
         <member name="M:HelloWorldAPI.Controllers.TodaysDataController.#ctor(HelloWorldInfrastructure.Services.IDataService)">
             <summary>
-            Initializes a new instance of the <see cref="T:HelloWorldAPI.Controllers.TodaysDataController"/> class.
+                Initializes a new instance of the <see cref="T:HelloWorldAPI.Controllers.TodaysDataController"/> class.
             </summary>
             <param name="dataService">The injected data service</param>
         </member>
         <member name="M:HelloWorldAPI.Controllers.TodaysDataController.Get">
             <summary>
-            Gets today's value
+                Gets today's value
             </summary>
             <returns>A TodaysData model containing today's value</returns>
         </member>
