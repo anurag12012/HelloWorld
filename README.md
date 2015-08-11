@@ -25,13 +25,8 @@ The Hello World Application consists of:
 4. HelloWorldAPI.Tests - A Test project containing unit tests for the application
 
 To run the application:
-
 1. Build the solution (all of the projects)
-
 2. Set the HelloWorldAPI project as the 'Startup Project'
-
 3. Debug/run the HelloWorldAPI project
-
 4. Open a cmd window
-
 5. Run the ConsoleApp binary in the cmd window (HelloWorld\ConsoleApp\bin\Debug\ConsoleApp.exe)
