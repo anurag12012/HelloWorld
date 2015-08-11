@@ -21,7 +21,7 @@ The Hello World Application consists of:
 
 2. HelloWorldAPI - A Web API for the Console Application to communicate with
 
-3. HelloWorldInfrastructure - A Class library containing reusable code
+3. HelloWorldInfrastructure - A Class library containing reusable code 
  
 4. HelloWorldAPI.Tests - A Test project containing unit tests for the application
 
