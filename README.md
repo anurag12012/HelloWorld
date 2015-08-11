@@ -20,7 +20,6 @@ The Hello World Application consists of:
 1. ConsoleApp - A Console Application that will write to the Console
 
 2. HelloWorldAPI - A Web API for the Console Application to communicate with
-
 3. HelloWorldInfrastructure - A Class library containing reusable code 
  
 4. HelloWorldAPI.Tests - A Test project containing unit tests for the application
