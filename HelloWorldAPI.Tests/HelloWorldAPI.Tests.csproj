@@ -63,6 +63,10 @@
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -122,6 +126,10 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="UnitTests\HelloWorldWebServiceUnitTests.cs" />
+    <Compile Include="UnitTests\HelloWorldConsoleAppUnitTests.cs" />
+    <Compile Include="UnitTests\HelloWorldMapperUnitTests.cs" />
+    <Compile Include="UnitTests\HelloWorldDataServiceUnitTests.cs" />
     <Compile Include="UnitTests\TodaysDataControllerUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +141,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleApp\ConsoleApp.csproj">
+      <Project>{0D47C66E-AA53-41B0-BBF3-D739F2D3ED84}</Project>
+      <Name>ConsoleApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HelloWorldAPI\HelloWorldAPI.csproj">
       <Project>{CE8CBD5F-18F7-4645-93D2-18176BEFF0BB}</Project>
       <Name>HelloWorldAPI</Name>

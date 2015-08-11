@@ -7,6 +7,7 @@
 
 namespace HelloWorldAPI.Controllers
 {
+    using System.Configuration;
     using System.IO;
     using System.Net;
     using System.Web.Http;
@@ -39,6 +40,7 @@ namespace HelloWorldAPI.Controllers
         /// </summary>
         /// <returns>A TodaysData model containing today's value</returns>
         [WebApiExceptionFilter(Type = typeof(IOException), Status = HttpStatusCode.ServiceUnavailable, Severity = SeverityCode.Error)]
+        [WebApiExceptionFilter(Type = typeof(SettingsPropertyNotFoundException), Status = HttpStatusCode.ServiceUnavailable, Severity = SeverityCode.Error)]
         public TodaysData Get()
         {
             return this.dataService.GetTodaysData();

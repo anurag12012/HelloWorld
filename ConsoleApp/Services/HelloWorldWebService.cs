@@ -10,6 +10,7 @@ namespace ConsoleApp.Services
     using System;
     using HelloWorldInfrastructure.FrameworkWrappers;
     using HelloWorldInfrastructure.Models;
+    using HelloWorldInfrastructure.Resources;
     using HelloWorldInfrastructure.Services;
     using RestSharp;
 
@@ -18,11 +19,6 @@ namespace ConsoleApp.Services
     /// </summary>
     public class HelloWorldWebService : IHelloWorldWebService
     {
-        /// <summary>
-        ///     The application settings key for the Hello World API URL
-        /// </summary>
-        private const string HelloWorldApiUrlKey = "HelloWorldAPIURL";
-
         /// <summary>
         ///     The application settings service
         /// </summary>
@@ -79,7 +75,7 @@ namespace ConsoleApp.Services
             TodaysData todaysData = null;
 
             // Set the URL for the request
-            this.restClient.BaseUrl = this.uriService.GetUri(this.appSettings.Get(HelloWorldApiUrlKey));
+            this.restClient.BaseUrl = this.uriService.GetUri(this.appSettings.Get(AppSettingsKeys.HelloWorldApiUrlKey));
 
             // Setup the request
             this.restRequest.Resource = "todaysdata";

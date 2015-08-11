@@ -21,7 +21,7 @@ namespace HelloWorldInfrastructure.Services
         /// <returns>The application settings value</returns>
         public string Get(string name)
         {
-            return ConfigurationManager.AppSettings.Get(name); ////[name];
+            return ConfigurationManager.AppSettings.Get(name);
         }
     }
 }

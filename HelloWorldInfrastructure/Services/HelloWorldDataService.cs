@@ -7,20 +7,17 @@
 
 namespace HelloWorldInfrastructure.Services
 {
+    using System.Configuration;
     using HelloWorldInfrastructure.FrameworkWrappers;
     using HelloWorldInfrastructure.Mappers;
     using HelloWorldInfrastructure.Models;
+    using HelloWorldInfrastructure.Resources;
 
     /// <summary>
     ///     Data service for manipulating Hello World data
     /// </summary>
     public class HelloWorldDataService : IDataService
     {
-        /// <summary>
-        ///     The application settings key for the today data file
-        /// </summary>
-        private const string TodayDataFileKey = "TodaysDataFile";
-
         /// <summary>
         ///     The application settings service
         /// </summary>
@@ -66,9 +63,22 @@ namespace HelloWorldInfrastructure.Services
         /// <returns>A TodaysData model containing today's data</returns>
         public TodaysData GetTodaysData()
         {
-            // Get the data
-            var rawData = this.fileIOService.ReadFile(this.appSettings.Get(TodayDataFileKey)) + " as of "
-                          + this.dateTimeWrapper.Now().ToString("F");
+            // Get the file path
+            var filePath = this.appSettings.Get(AppSettingsKeys.TodayDataFileKey);
+
+            if (string.IsNullOrEmpty(filePath))
+            {
+                // No file path was found, throw exception
+                throw new SettingsPropertyNotFoundException(
+                    ErrorCodes.TodaysDataFileSettingsKeyError, 
+                    new SettingsPropertyNotFoundException("The TodayDataFile settings key was not found or had no value."));
+            }
+
+            // Get the data from the file
+            var rawData = this.fileIOService.ReadFile(filePath);
+
+            // Add the timestamp
+            rawData += " as of " + this.dateTimeWrapper.Now().ToString("F");
 
             // Map to the return type
             var todaysData = this.helloWorldMapper.StringToTodaysData(rawData);

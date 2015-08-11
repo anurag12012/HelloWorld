@@ -18,7 +18,12 @@ namespace HelloWorldInfrastructure.Resources
         public const string GeneralError = "general-error";
 
         /// <summary>
-        ///     The Data File error code
+        ///     The Today Data File Settings error code
+        /// </summary>
+        public const string TodaysDataFileSettingsKeyError = "todays-data-file-settings-error";
+
+        /// <summary>
+        ///     The Today Data File error code
         /// </summary>
         public const string TodayDataFileError = "today-data-file-error";
     }

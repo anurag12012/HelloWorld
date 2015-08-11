@@ -7,6 +7,7 @@
 
 namespace HelloWorldAPI.Tests.UnitTests
 {
+    using System.Configuration;
     using System.IO;
     using Controllers;
     using HelloWorldInfrastructure.Models;
@@ -62,6 +63,20 @@ namespace HelloWorldAPI.Tests.UnitTests
             // Check values
             Assert.NotNull(result);
             Assert.AreEqual(result.Data, expectedResult.Data);
+        }
+
+        /// <summary>
+        ///     Tests the controller's get method for a SettingsPropertyNotFoundException
+        /// </summary>
+        [Test]
+        [ExpectedException(ExpectedException = typeof(SettingsPropertyNotFoundException))]
+        public void UnitTestTodaysDataControllerGetSettingsPropertyNotFoundException()
+        {
+            // Set up dependencies
+            this.dataServiceMock.Setup(m => m.GetTodaysData()).Throws(new SettingsPropertyNotFoundException("Error!"));
+
+            // Call the method to test
+            this.todaysDataController.Get();
         }
 
         /// <summary>

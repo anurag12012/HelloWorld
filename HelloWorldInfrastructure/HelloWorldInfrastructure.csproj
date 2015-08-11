@@ -69,8 +69,10 @@
     <Compile Include="Mappers\HelloWorldMapper.cs" />
     <Compile Include="Models\ErrorResponseContent.cs" />
     <Compile Include="Models\TodaysData.cs" />
+    <Compile Include="Resources\AppSettingsKeys.cs" />
     <Compile Include="Resources\ErrorCodes.cs" />
     <Compile Include="Services\ConfigAppSettings.cs" />
+    <Compile Include="Services\TestLogger.cs" />
     <Compile Include="Services\ConsoleLogger.cs" />
     <Compile Include="Services\ILogger.cs" />
     <Compile Include="Services\JsonL4NLogger.cs">
